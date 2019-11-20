@@ -19,7 +19,7 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     Spinner spnLocation,roomType;
-    TextView tvCheckIn,tvCheckOut,tvDays;
+    TextView tvCheckIn,tvCheckOut,tvDays,tvroomno,tvsuite,tvtotal,tvVat;
     EditText etAdult,etChild,etRoom;
     Button btnBook;
     int yearin,monthin,dayin,yearout,monthout,dayout;
@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         etRoom=findViewById(R.id.etroom);
         btnBook=findViewById(R.id.btnBook);
         tvDays=findViewById(R.id.tvDays);
+        tvroomno=findViewById(R.id.tvroomno);
+        tvsuite=findViewById(R.id.totalsuite);
+        tvtotal=findViewById(R.id.tvtotal);
+        tvVat=findViewById(R.id.tvVat);
+
 
         //spinner for city starts
 
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         //spinner for room type starts
 
-        String rooms[]={"Standard\n Rs.1000","AC\n Rs.2000","Deluxe\n Rs.3000"};
+        String rooms[]={"Deluxe\n Rs.2000","AC\n Rs.3000","Platinum\n Rs.4000"};
         ArrayAdapter roomAdapter=new ArrayAdapter<>(
                 this,android.R.layout.simple_list_item_1,rooms
         );
@@ -106,6 +111,54 @@ public class MainActivity extends AppCompatActivity {
                 long diff = millis2 - millis1;
                 long diffDays = (diff / (86400000));
                 tvDays.setText("No of Days: "+diffDays);
+
+                no_of_room = Integer.parseInt(etRoom.getText().toString());
+                double price;
+                double Total_Price;
+                double Grand_Total;
+
+                String suite = roomType.getSelectedItem().toString();
+
+                if (suite == "Deluxe\n Rs.2000")
+                {
+                    price = 2000;
+                    Total_Price = price * no_of_room * diffDays;
+                    Grand_Total = (0.13) * Total_Price + Total_Price;
+
+                    tvDays.setText("Total Days:"+diffDays);
+                    tvroomno.setText(("Number of Room(s):"+no_of_room));
+                    tvsuite.setText("Room Price Per Night:"+"2000");
+                    tvtotal.setText("Total:"+Total_Price);
+                    tvVat.setText("Grand Total:"+Grand_Total);
+                    Toast.makeText(MainActivity.this, "Total price is" + Grand_Total,
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                else if (suite == "AC\n Rs.3000")
+                {
+                    price = 3000;
+                    Total_Price = price * no_of_room * diffDays;
+                    Grand_Total = (0.13) * Total_Price + Total_Price;
+                    tvDays.setText("Total Days:"+diffDays);
+                    tvroomno.setText(("Number of Room(s):"+no_of_room));
+                    tvsuite.setText("Room Price Per Night:"+"3000");
+                    tvtotal.setText("Total:"+Total_Price);
+                    tvVat.setText("Grand Total:"+Grand_Total);
+                    Toast.makeText(MainActivity.this, "Total price is" + Grand_Total, Toast.LENGTH_SHORT).show();
+                }
+
+                else if (suite == "Platinum\n Rs.4000")
+                {
+                    price = 4000;
+                    Total_Price = price * no_of_room * diffDays;
+                    Grand_Total = (0.13) * Total_Price + Total_Price;
+                    tvDays.setText("Total Days:"+diffDays);
+                    tvroomno.setText(("Number of Room(s):"+no_of_room));
+                    tvsuite.setText("Room Price Per Night:"+"4000");
+                    tvtotal.setText("Total:"+Total_Price);
+                    tvVat.setText("Grand Total:"+Grand_Total);
+                    Toast.makeText(MainActivity.this, "Total price is" + Grand_Total, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
