@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Hotel Easily"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        />
+
+    <Spinner
+        android:id="@+id/spnLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <Spinner
+        android:id="@+id/spnRoomType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check In Date"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tvCheckIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YYYY-MM-DD"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Out Date"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tvCheckOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YYYY-MM-DD"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/relative"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:padding="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:text="Adults"
+            android:gravity="center"
+            android:textSize="20dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="Children" ></TextView>
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="Rooms"
+            android:layout_alignParentRight="true"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:padding="5dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/etadult"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:hint="0"
+            android:textSize="20dp"
+            android:gravity="center"
+            ></EditText>
+        <EditText
+            android:id="@+id/etchild"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_alignParentLeft="true"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:hint="0">
+
+        </EditText>
+        <EditText
+            android:id="@+id/etroom"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:gravity="center"
+            android:hint="0"
+            android:textSize="20dp"
+            android:layout_alignParentRight="true"></EditText>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:text="Book Now"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:id="@+id/tvDays"
+        />
+
+</LinearLayout>
